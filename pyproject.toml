@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "streamlit-unstructed-pdf"
+version = "0.1.0"
+description = ""
+authors = ["narendra-bluebash <narendra.dangi@bluebash.co>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.9.7 || >3.9.7,<4.0"
+streamlit = "1.35.0"
+langchain-openai = "^0.1.9"
+langchain = "^0.2.5"
+langchain-community = "^0.2.5"
+langchain-postgres = "^0.0.9"
+python-dotenv = "^1.0.1"
+psycopg2-binary = "^2.9.9"
+pinecone-client = "^4.1.1"
+pymupdf = "^1.24.6"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
