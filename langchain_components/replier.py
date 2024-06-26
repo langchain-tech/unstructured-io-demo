@@ -88,7 +88,6 @@ def get_vectorstore_from_pinecone(index_name):
 def get_context_from_vectorstore(vectorstore,user_query):
     logging.info("Start postgres vector search......")
     relevant_docs = vectorstore.similarity_search(user_query,k=4)
-    logging.info(relevant_docs)
     context = ""
     relevant_images = []
     for d in relevant_docs:

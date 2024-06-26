@@ -1,6 +1,6 @@
 import streamlit as st
 import random
-from langchain_components.replier import get_context_from_vectorstore,get_vectorstore_from_postgres,prepare_prompt_and_chain_with_history,get_vectorstore_from_pinecone
+from langchain_components.replier import *
 import fitz
 
 def display_pdf(pdf_path):
@@ -28,7 +28,6 @@ def main():
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
-
 
     with st.sidebar:
         username = st.text_input("Please enter your name here")

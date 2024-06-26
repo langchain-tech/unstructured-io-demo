@@ -80,3 +80,9 @@ Run the application using Streamlit:
 ```
 streamlit run app.py
 ```
+
+
+
+## Examples
+![My test image](data/img1.png)
+![My test image](data/img2.png)

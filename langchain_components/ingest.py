@@ -22,8 +22,10 @@ PINECONE_API_KEY=os.getenv("PINECONE_API_KEY")
 
 
 
-filename="/home/bluebash-005/code/bluebash/poc/stramlit_pdf/data/fy2024.pdf"
-output_path = "/home/bluebash-005/code/bluebash/poc/stramlit_pdf/images"
+root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+filename = os.path.join(root_path, "data/fy2024.pdf")
+output_path = os.path.join(root_path, "images")
+
 openai_ef = OpenAIEmbeddings()
 
 
@@ -44,9 +46,8 @@ def file_reader():
         extract_images_in_pdf=True,
         infer_table_structure=True,
         chunking_strategy="by_title",
-        max_characters=4000,
-        new_after_n_chars=3800,
-        combine_text_under_n_chars=2000,
+        max_characters=2000,
+        new_after_n_chars=1700,
         extract_image_block_output_dir=output_path,
     )
     return raw_pdf_elements
@@ -60,7 +61,7 @@ def text_insert(raw_pdf_elements):
     """
 
     prompt=PromptTemplate.from_template(summary_prompt)
-    llm=ChatOpenAI(model="gpt-3.5-turbo", openai_api_key = openai_api_key, max_tokens=1024)
+    llm=ChatOpenAI(model="gpt-4o", openai_api_key = openai_api_key, max_tokens=1024)
     runnable = prompt | llm
 
     for e in raw_pdf_elements:
