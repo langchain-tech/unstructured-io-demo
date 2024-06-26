@@ -42,8 +42,8 @@ def main():
             if "vectorstore" not in st.session_state:
                 collection_name="fy2024_chunk_2000"
                 pinecone_collection_name="fy2024"
-                st.session_state.vectorstore = get_vectorstore_from_postgres(collection_name)
-                #st.session_state.vectorstore = get_vectorstore_from_pinecone(pinecone_collection_name)
+                #st.session_state.vectorstore = get_vectorstore_from_postgres(collection_name)
+                st.session_state.vectorstore = get_vectorstore_from_pinecone(pinecone_collection_name)
 
             if "chain" not in st.session_state:
                 st.session_state.chain = prepare_prompt_and_chain_with_history()
