@@ -13,6 +13,7 @@ def display_pdf(pdf_path):
             page = pdf_document.load_page(page_num)
             image = page.get_pixmap()
             st.sidebar.image(image.tobytes(), caption=f"Page {page_num + 1}", use_column_width=True)
+            
 
     except Exception as e:
         st.sidebar.error(f"Error loading PDF: {e}")
@@ -55,11 +56,14 @@ def main():
         pdf_path = "data/fy2024.pdf"
         if st.button('Show PDF'):
             st.session_state.pdf_path = pdf_path
+        
+        if st.download_button(label="Download PDF", data=open(pdf_path, 'rb').read(), file_name=pdf_path.split("/")[-1]):
+            pass
+
 
     if "pdf_path" in st.session_state:
         pdf_path = st.session_state.pdf_path
         display_pdf(pdf_path)
-
 
 
     for message in st.session_state.messages:
