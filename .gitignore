@@ -4,7 +4,7 @@ venv/
 myvenv/
 my-env/
 .env
-
+data/df2.csv
 data_ingest/
 __pycache__
 
