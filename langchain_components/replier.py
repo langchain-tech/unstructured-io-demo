@@ -30,8 +30,7 @@ def prepare_prompt_and_chain_with_history():
                 """You are an expert in data that hepls to summerize the graph and extract information from that images. Answer the question based only on the following context, which can include text, images and tables: "
                 ** IMPORTANT INSTRUCTIONS -->
                     1. Reply in 50 words maximum.
-                    2. Only answer the question related to the context else say you don't know the answer.""",
-
+                    2. Only answer the question related to the context else say I don't know the answer.""",
             ),
             "Here is the context to answer user's questions everytime --> {data}. ",
             MessagesPlaceholder(variable_name="history"),

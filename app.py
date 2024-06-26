@@ -21,7 +21,7 @@ def display_pdf(pdf_path):
 
 
 def main():
-    st.header('Interact with your PDF that includes images, tables, and graphs.')
+    st.header('Interact with your complex PDF that includes images, tables, and graphs.')
     
     if "activate_chat" not in st.session_state:
         st.session_state.activate_chat = False
@@ -32,7 +32,7 @@ def main():
 
     with st.sidebar:
         username = st.text_input("Please enter your name here")
-        if st.button('Press Button to Start chat with Narendra AI'):
+        if st.button('Press Button to Start chat with your pdf..'):
             if "user_id" not in st.session_state:
                 st.session_state.user_id = username
             
