@@ -22,7 +22,8 @@ PINECONE_API_KEY=os.getenv("PINECONE_API_KEY")
 
 
 
-root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+root_path = os.path.abspath(os.path.join(os.path.dirname(__file__)))
+
 filename = os.path.join(root_path, "data/fy2024.pdf")
 output_path = os.path.join(root_path, "images")
 
@@ -36,8 +37,7 @@ text_summaries = []
 table_elements = []
 table_summaries = []
 
-image_elements = []
-image_summaries = []
+
 
 
 def file_reader():
@@ -75,6 +75,9 @@ def text_insert(raw_pdf_elements):
             summary = runnable.invoke({'element_type': 'table', 'element': e})
             table_summaries.append(summary.content)
 
+
+image_elements = []
+image_summaries = []
 
 def image_insert():
 
@@ -193,7 +196,7 @@ def add_docs_to_pinecone(index_name):
 
 
 def main():
-    collection_name="fy2024"
+    collection_name="fy26-40"
     print("started file reader")
     raw_pdf_elements=file_reader()
     print(raw_pdf_elements)

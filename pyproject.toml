@@ -6,7 +6,7 @@ authors = ["narendra-bluebash <narendra.dangi@bluebash.co>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.9.7 || >3.9.7,<4.0"
+python = ">=3.9,<3.9.7 || >3.9.7,<3.13"
 streamlit = "1.35.0"
 langchain-openai = "^0.1.9"
 langchain = "^0.2.5"
