@@ -3,7 +3,6 @@ import random
 from langchain_components.replier import *
 import fitz
 
-
 def display_pdf(pdf_path):
     try:
         pdf_document = fitz.open(pdf_path)
@@ -39,7 +38,7 @@ def main():
                 st.session_state.session_id = str(random_number)
 
             if "vectorstore" not in st.session_state:
-                collection_name="newfy2024"
+                collection_name="a1"
                 #pinecone_collection_name="fy24-40"
                 st.session_state.vectorstore = get_vectorstore_from_postgres(collection_name)
                 #st.session_state.vectorstore = get_vectorstore_from_pinecone(pinecone_collection_name)

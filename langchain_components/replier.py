@@ -27,9 +27,7 @@ def prepare_prompt_and_chain_with_history():
         [
             (
                 "system",
-                """You are an expert in data that hepls to summerize the text and answer the question based only on the following content, which may include text and tables: if the content is not relevent then return I don't know. "
-                ** IMPORTANT INSTRUCTIONS -->
-                    1. Reply in 50 words maximum.""",
+                """You are an expert in data that hepls to summerize the text and answer the question based only on the following content, which may include text and tables: if the content is not relevent then return I don't know.""",
             ),
             "Here is the context to answer user's questions everytime --> {data}. ",
             MessagesPlaceholder(variable_name="history"),
@@ -85,10 +83,8 @@ def get_vectorstore_from_pinecone(index_name):
 
 
 def get_context_from_vectorstore(vectorstore,user_query):
-    logging.info("Start postgres vector search......")
     relevant_docs = vectorstore.similarity_search(user_query,k=4)
     context = ""
-    relevant_images = []
     for d in relevant_docs:
         if d.metadata['type'] == 'text':
             context += '[text]' + d.metadata['original_content']
@@ -96,5 +92,4 @@ def get_context_from_vectorstore(vectorstore,user_query):
             context += '[table]' + d.metadata['original_content']
         elif d.metadata['type'] == 'image':
             context += '[image]' + d.page_content
-            relevant_images.append(d.metadata['original_content'])
     return context

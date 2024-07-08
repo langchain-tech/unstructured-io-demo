@@ -16,6 +16,7 @@ python-dotenv = "^1.0.1"
 psycopg2-binary = "^2.9.9"
 pinecone-client = "^4.1.1"
 pymupdf = "^1.24.6"
+black = "^24.4.2"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.4"
