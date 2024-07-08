@@ -4,7 +4,6 @@ venv/
 myvenv/
 my-env/
 .env
-data_ingest/
 __pycache__
 
 images/
