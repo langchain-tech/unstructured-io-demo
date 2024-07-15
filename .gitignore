@@ -12,3 +12,5 @@ images/
 .github/
 
 service_account_key_for_google_drive.json
+
+poetry.lock
