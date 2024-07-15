@@ -2,11 +2,13 @@
 name = "streamlit-unstructed-pdf"
 version = "0.1.0"
 description = ""
-authors = ["narendra-bluebash <narendra.dangi@bluebash.co>"]
+authors = ["Vishal <vishal@bluebash.co>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.9.7 || >3.9.7,<3.13"
+unstructured = {extras = ["all-docs"], version = "^0.14.10"}
+tiktoken = "^0.7.0"
 streamlit = "1.35.0"
 langchain-openai = "^0.1.9"
 langchain = "^0.2.5"
@@ -17,10 +19,13 @@ psycopg2-binary = "^2.9.9"
 pinecone-client = "^4.1.1"
 pymupdf = "^1.24.6"
 black = "^24.4.2"
+scikit-learn = "^1.5.1"
+umap-learn = "^0.5.6"
+
 
 [tool.poetry.group.dev.dependencies]
-ipykernel = "^6.29.4"
+ipykernel = "^6.29.5"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
